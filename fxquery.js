@@ -8,7 +8,8 @@ $(function() {
   console.log( "ready!" )
 
   $('[data-i13n-link]').on('click', function() {
-    console.log('Yes!', $(this).data('i13nLink'))
+    const data = $(this).data('i13nLink')
+    console.log('Link Info: ', data.name, '|', data.eventType)
   })
 });
 console.log('XXX')
