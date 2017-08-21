@@ -9,6 +9,7 @@ $(function() {
 
   $('[data-i13n-link]').on('click', function() {
     const data = $(this).data('i13nLink')
+    console.log(data)
     console.log('Link Info: ', data.name, '|', data.eventType)
   })
 });
