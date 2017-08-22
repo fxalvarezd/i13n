@@ -5,12 +5,31 @@
 
 
 $(function() {
-  console.log( "ready!" )
+  console.log( "DOC READY!" )
+
+  const i13nData = $('[data-i13n-data]').data('i13nData')
+  console.log('PAGE LOAD DATA', i13nData);
 
   $('[data-i13n-link]').on('click', function() {
-    const data = $(this).data('i13nLink')
-    console.log(data)
-    console.log('Link Info: ', data.name, '|', data.eventType)
+    const $this = $(this)
+    const data = $this.data('i13nLink')
+    const parentsSelector = $this.parents('[data-i13n-page], [data-i13n-area], [data-i13n-container]')
+    const parents = []
+
+    parentsSelector.each(function() {
+      const $parent = $(this)
+
+      if (typeof $parent.data('i13nPage') !== 'undefined') {
+        parents.unshift($parent.data('i13nPage'))
+      } else if (typeof $parent.data('i13nArea') !== 'undefined') {
+        parents.unshift($parent.data('i13nArea'))
+      } else if (typeof $parent.data('i13nContainer') !== 'undefined') {
+        parents.unshift($parent.data('i13nContainer'))
+      }
+    })
+
+    console.log('LINK CLICK DATA:', parents, data.name, '|', data.eventType)
   })
 });
-console.log('XXX')
+
+console.log('RUNS FIRST.')
