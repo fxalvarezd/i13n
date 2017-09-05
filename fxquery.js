@@ -7,7 +7,7 @@
 const logColors = 'background: #222; color: #bada55'
 
 $(function() {
-  const i13nData = $('[data-i13n-data]').data('i13nData')
+  const i13nData = $('[data-i13n-page]').data('i13nPage')
   const i13nSelectors = '[data-i13n-page], [data-i13n-area], [data-i13n-index], [data-i13n-group], [data-i13n-component]'
 
   console.log("%c DOC READY!!", logColors)
