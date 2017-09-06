@@ -1,0 +1,39 @@
+{
+  "name": "i13n",
+  "version": "1.0.0",
+  "description": "Instrumentation POC",
+  "main": ".src/index.js",
+  "author": "Francisco X. Alvarez",
+  "license": "ISC",
+  "homepage": "https://github.com/fxalvarezd/i13n#readme",
+  "publishConfig": {
+    "registry": "http://registry.prod.auction.local:8081/repository/npm/"
+  },
+  "scripts": {
+    "test:lint": "eslint \"src/**/*.js\"",
+    "test": "npm run test:lint",
+    "release": "ten-x-release --changelog=raw"
+  },
+  "devDependencies": {
+    "@ten-x/eslint-config-tenx": "0.0.1",
+    "@ten-x/npm-scripts": "^0.1.4",
+    "eslint": "^3.8.1",
+    "pre-commit": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fxalvarezd/i13n.git"
+  },
+  "keywords": [
+    "i13n"
+  ],
+  "bugs": {
+    "url": "https://github.com/fxalvarezd/i13n/issues"
+  },
+  "pre-commit": {
+    "run": [
+      "test"
+    ],
+    "silent": true
+  }
+}

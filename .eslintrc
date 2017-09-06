@@ -1,0 +1,10 @@
+{
+  "extends": "@ten-x/eslint-config-tenx",
+  "env": {
+    "browser": true,
+    "mocha": true
+  },
+  "rules": {
+    "new-cap": 0
+  }
+}
